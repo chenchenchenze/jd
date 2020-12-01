@@ -6,7 +6,7 @@ name: jd_necklace
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 * * * *'
+    - cron: '10 12,16 * * *'
   watch:
     types: started
   repository_dispatch:
