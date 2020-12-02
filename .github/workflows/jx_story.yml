@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/whyour/hundun.git ~/hundun/quanx
+          git clone https://github.com/whyour/hundun.git ~/quanx
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -33,11 +33,11 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
-          cd ~/hundun/quanx
+          cd ~/quanx
           npm install
       - name: '运行 【京喜金牌工厂】'
         run: |
-          cd ~/hundun/quanx
+          cd ~/quanx
           node jx_story.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
