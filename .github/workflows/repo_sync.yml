@@ -27,5 +27,5 @@ jobs:
         with:
           source_repo: "https://github.com/lxk0301/mySelf.git"
           source_branch: "main" # mySelf仓库的分支
-          destination_branch: "master" #你自己远程的分支
+          destination_branch: "main" #你自己远程的分支
           github_token: ${{ secrets.PAT }}
