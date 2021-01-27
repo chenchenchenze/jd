@@ -165,13 +165,12 @@ docker exec -it jd bash jd resetpwd
 
     如果你忘记了命令也不要紧，只要你记得命令`jd`就行，输入后会提示你：
 
-    ![Docker1](Picture/Docker1.png)
-
     脚本名不记得也不要紧，输错了也会提示你的：
 
-    ![Docker2](Picture/Docker2.png)
+
 
 #宿主机文件与容器文件编辑
+
 docker cp jd:/jd/git_pull.sh /root/git_pull.sh#复制到宿主机
 
 docker cp /root/git_pull.sh jd:/jd/git_pull.sh#复制回容器
