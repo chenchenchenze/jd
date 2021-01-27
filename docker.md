@@ -50,7 +50,18 @@
     --restart always \
     evinedeng/jd:github
     ```
-
+    
+    ```
+    docker run -dit \
+    -v /my/jdchen/config:/jd/config \
+    -v /my/jdchen/log:/jd/log \
+    -v /appdata/jd/scripts:/jd/scripts \
+    -p 5678:5678 \
+    --name jdchen \
+    --hostname jdchen \
+    --restart always \
+    evinedeng/jd
+    ```
 2. 请在创建后使用`docker logs -f jd`查看创建日志，直到出现`容器启动成功...`字样才代表启动成功（不是以此结束的请更新镜像），按`Ctrl+C`退出查看日志。
 
 3. 访问`http://<ip>:5678`（ip是指你Docker宿主机的局域网ip），初始用户名：`admin`，初始密码：`adminadmin`，请登陆后务必修改密码，并在线编辑`config.sh`和`crontab.list`，其中`config.sh`可以对比修改，**如何修改请仔细阅读各文件注释**。如未启用控制面板自动启动功能，请运行`docker exec -it jd node /jd/panel/server.js`来启动，使用完控制面板后`Ctrl+C`即可结束进程。如无法访问，请从防火墙、端口转发、网络方面着手解决。实在无法访问，就使用winscp工具sftp连接进行修改。
@@ -59,13 +70,17 @@
 
 5. 如何自动更新Docker容器
 
-    安装`containrrr/watchtower`可以自动更新容器，它也是一个容器，但这个容器可以监视你安装的所有容器的原始镜像的更新情况，如有更新，它将使用你原来的配置自动重新部署容器。部署`containrrr/watchtower`最简单的方式如下：
+    安装`containrrr/watchtower`可以自动更新容器，它也是一个容器，但这个容器可以监视你安装的所有容器的原始镜像的更新情况，如有更新，它将使用你原来的配置自动重新部署容器。
+    
+    官方给出的默认启动命令在长期使用后会堆积非常多的标签为none的旧镜像，如果放任不管会占用大量的磁盘空间。要避免这种情况可以加入–cleanup选项，这样每次更新都会把旧的镜像清理掉。`--cleanup`
 
     ```shell
     docker run -d \
         --name watchtower \
+        --cleanup \
         -v /var/run/docker.sock:/var/run/docker.sock \
         containrrr/watchtower
+
     ```
 
 
