@@ -52,15 +52,15 @@
     ```
     
     ```
-    docker run -dit \
-    -v /my/jdchen/config:/jd/config \
-    -v /my/jdchen/log:/jd/log \
+   docker run -dit \
+    -v /my/jd/config:/jd/config \
+    -v /my/jd/log:/jd/log \
     -v /appdata/jd/scripts:/jd/scripts \
     -p 5678:5678 \
-    --name jdchen \
-    --hostname jdchen \
+    --name jd \
+    --hostname jd \
     --restart always \
-    evinedeng/jd
+    evinedeng/jd:gitee
     ```
 2. 请在创建后使用`docker logs -f jd`查看创建日志，直到出现`容器启动成功...`字样才代表启动成功（不是以此结束的请更新镜像），按`Ctrl+C`退出查看日志。
 
