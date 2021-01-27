@@ -169,8 +169,12 @@ docker exec -it jd bash jd resetpwd
 
 
 
-#宿主机文件与容器文件编辑
+# 宿主机文件与容器文件编辑
 
 docker cp jd:/jd/git_pull.sh /root/git_pull.sh#复制到宿主机
 
 docker cp /root/git_pull.sh jd:/jd/git_pull.sh#复制回容器
+
+# nano方式修改git_pull.sh
+docker exec -it jd bash
+nano git_pull.sh
