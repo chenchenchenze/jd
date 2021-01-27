@@ -68,23 +68,8 @@
         containrrr/watchtower
     ```
 
-    你也可以访问 https://containrrr.dev/watchtower/ 获取更详细的部署说明，包括如何避开某些容器不让它自动更新，如何发更新容器后发送通知，设置检测时间等等。
 
-![home](Picture/home.png)
 
-![GetCookie1](Picture/GetCookie1.png)
-
-![GetCookie2](Picture/GetCookie2.png)
-
-![crontab](Picture/crontab.png)
-
-![diff](Picture/diff.png)
-
-# 以下仅供有一定基础的玩家使用，小白勿碰，提问不回，有问题自行根据wiki解决
-
-# 以下仅供有一定基础的玩家使用，小白勿碰，提问不回，有问题自行根据wiki解决
-
-# 以下仅供有一定基础的玩家使用，小白勿碰，提问不回，有问题自行根据wiki解决
 
 ## 如果多容器并发
 
@@ -186,6 +171,7 @@ docker exec -it jd bash jd resetpwd
 
     ![Docker2](Picture/Docker2.png)
 
-## 如有帮助你薅到羊毛，请不吝赏杯茶水费
+#宿主机文件与容器文件编辑
+docker cp jd:/jd/git_pull.sh /root/git_pull.sh#复制到宿主机
 
-![thanks](Picture/thanks.png)
+docker cp /root/git_pull.sh jd:/jd/git_pull.sh#复制回容器
