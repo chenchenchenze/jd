@@ -193,3 +193,8 @@ docker cp /root/git_pull.sh jd:/jd/git_pull.sh#复制回容器
 # nano方式修改git_pull.sh
 docker exec -it jd bash
 nano git_pull.sh
+
+
+# 重启docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
