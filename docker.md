@@ -197,10 +197,14 @@ nano git_pull.sh
 
 # 重启docker
 sudo systemctl daemon-reload
+
 sudo systemctl restart docker
 
 # push
 docker tag imageId newImageName:0.1
+
 docker login 
+
 docker push newImageName:0.1
+
 docker rmi-f imageId
