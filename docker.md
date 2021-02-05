@@ -178,9 +178,6 @@ docker exec -it jd bash jd resetpwd
     docker exec -it jd bash jd xxx now  # 无论是否设置了随机延迟，均立即运行
     ```
 
-    如果你忘记了命令也不要紧，只要你记得命令`jd`就行，输入后会提示你：
-
-    脚本名不记得也不要紧，输错了也会提示你的：
 
 
 
@@ -201,10 +198,17 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 # push
-docker tag imageId newImageName:0.1
+docker tag imageId newImagesName:0.1
 
 docker login 
 
-docker push newImageName:0.1
+docker push newImagesName:0.1
 
-docker rmi-f imageId
+docker rmi-f imagesId
+
+# 本地备份及恢复
+docker save imagesId > /my/jdchen.tar
+
+docker load < /my/jdchen.tar
+
+docker tag loadImagesID chenchenze/jdbase
