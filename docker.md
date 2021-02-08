@@ -212,3 +212,14 @@ docker save imagesId > /my/jdchen.tar
 docker load < /my/jdchen.tar
 
 docker tag loadImagesID chenchenze/jdbase
+
+
+
+
+# 转换
+docker run -d -p 58080:80 --restart always --name subweb careywong/subweb:latest  前端
+后端
+docker run -d --restart=always -p 25500:25500 tindy2013/subconverter:latest
+curl http://localhost:25500/version
+上传配置
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini
