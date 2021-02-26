@@ -56,3 +56,6 @@ protected void onDestroy() {
 
 9、删除线  
 ~~删除线~~
+
+10、颜色  
+<font color=red size=3>颜色</font>
