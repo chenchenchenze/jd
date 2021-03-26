@@ -188,15 +188,15 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_On
 ```  
 ``` shell
 docker run -dit \
--v /root/jd/config:/jd/config \
--v /root/jd/log:/jd/log \
--v /root/jd/scripts:/jd/scripts \
--v /root/jd/own:/jd/own \
--v /root/jd/scripts2/docker:/jd/scripts2/docker \
--v /root/jd/git_pull.sh:/git_pull.sh \
--p 5678:5678 \
---name jd \
---hostname jd \
+-v /my/newjd/config:/jd/config \
+-v /my/newjd/log:/jd/log \
+-v /my/newjd/scripts:/jd/scripts \
+-v /my/newjd/own:/jd/own \
+-v /my/newjd/scripts2/docker:/jd/scripts2/docker \
+-v /my/newjd/git_pull.sh:/git_pull.sh \
+-p 3927:5678 \
+--name newjd \
+--hostname newjd \
 --restart always \
 -e ENABLE_HANGUP=true \
 -e ENABLE_WEB_PANEL=true \
