@@ -203,10 +203,10 @@ docker run -dit \
 -e ENABLE_WEB_TTYD=true \
 nevinee/jd:v4
 ```  
-docker exec -it jd jtask   # 运行jd_scripts脚本，类似于v3版本的jd命令
-docker exec -it jd otask   # 运行own脚本，详见配置文件说明
-docker exec -it jd mtask   # 运行你自己的脚本
-docker exec -it jd jlog    # 删除旧日志，类似于v3版本的rm_log命令
-docker exec -it jd jup     # 更新所有脚本，包括jd_scripts脚本和own脚本，自动增删定时任务，类似于v3版本的git_pull命令，但更强大
-docker exec -it jd jcode   # 导出所有互助码，可以准确识别没有码的ID，比v3版本的export_sharecode命令更智能
-docker exec -it jd jcsv    # 记录豆豆变化情况，在log目录下存为csv文件
+docker exec -it jd jtask   # 运行jd_scripts脚本，类似于v3版本的jd命令  
+docker exec -it jd otask   # 运行own脚本，详见配置文件说明  
+docker exec -it jd mtask   # 运行你自己的脚本  
+docker exec -it jd jlog    # 删除旧日志，类似于v3版本的rm_log命令  
+docker exec -it jd jup     # 更新所有脚本，包括jd_scripts脚本和own脚本，自动增删定时任务，类似于v3版本的git_pull命令，但更强大  
+docker exec -it jd jcode   # 导出所有互助码，可以准确识别没有码的ID，比v3版本的export_sharecode命令更智能  
+docker exec -it jd jcsv    # 记录豆豆变化情况，在log目录下存为csv文件  
