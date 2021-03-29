@@ -200,7 +200,7 @@ docker run -dit \
 --restart always \
 -e ENABLE_HANGUP=true \
 -e ENABLE_WEB_PANEL=true \
--e ENABLE_WEB_TTYD=true \
+-e ENABLE_TTYD=true \
 nevinee/jd:v4
 ```  
 docker exec -it newjd jtask   # 运行jd_scripts脚本，类似于v3版本的jd命令  
