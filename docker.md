@@ -49,11 +49,11 @@
     ~~官方给出的默认启动命令在长期使用后会堆积非常多的标签为none的旧镜像，如果放任不管会占用大量的磁盘空间。要避免这种情况可以加入–cleanup选项，这样每次更新都会把旧的镜像清理掉。`--cleanup`~~
 
     ```shell
-    docker run -d \
-        --name watchtower \
-        --cleanup \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        containrrr/watchtower
+docker run -d \
+    --name watchtower \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower —cleanup —interval 600 \
+    newjd
 
     ```
 
