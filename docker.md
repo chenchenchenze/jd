@@ -209,4 +209,5 @@ docker exec -it newjd mtask   # 运行你自己的脚本
 docker exec -it newjd jlog    # 删除旧日志，类似于v3版本的rm_log命令  
 docker exec -it newjd jup     # 更新所有脚本，包括jd_scripts脚本和own脚本，自动增删定时任务，类似于v3版本的git_pull命令，但更强大  
 docker exec -it jd jcode   # 导出所有互助码，可以准确识别没有码的ID，比v3版本的export_sharecode命令更智能  
-docker exec -it newjd jcsv    # 记录豆豆变化情况，在log目录下存为csv文件  
+docker exec -it newjd jcsv    # 记录豆豆变化情况，在log目录下存为csv文件   
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
